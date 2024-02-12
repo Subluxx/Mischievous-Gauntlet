@@ -7,12 +7,14 @@ public class miniGManager : MonoBehaviour
 {
     //bool member to check if the minigame has ended. 
     private bool hasEnded;
+    //has ended property to allow foreign scripts to manipulate
     public bool HasEnded
     { 
         get { return hasEnded; }
         set { hasEnded = value; }
     }
 
+    //script should have a reference to the main manager to allow for other scenes to be loaded upon minigame completion. 
     public GameObject mainMgr;
     private mainManager m;
 
