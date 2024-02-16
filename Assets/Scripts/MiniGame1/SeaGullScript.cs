@@ -1,17 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class SeaGullScript : MonoBehaviour
 {
-    public Transform SpawnPos;
-
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-    void Update()
+    public float destroyDelay = 10.0f;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Instantiate(SpawnPos.position);
+        Destroy(gameObject);
+
+    }
+    private void Awake()
+    {
+        StartCoroutine(RemoveProjectile(destroyDelay));
+    }
+    private void Update()
+    {
+        RemoveProjectile(destroyDelay);
+    }
+    
+
+    IEnumerator RemoveProjectile(float delayVar)
+    {
+        yield return new WaitForSeconds(delayVar);
+        Destroy(gameObject);
     }
 
 }
