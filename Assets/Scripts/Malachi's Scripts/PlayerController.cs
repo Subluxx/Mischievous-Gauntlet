@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
     {
         
         {
-           
+            /*if (other.gameObject.tag == "Fish")
+                {
+                ScoreManager.scoreCount += 1;
+                } */
         }
     }
 

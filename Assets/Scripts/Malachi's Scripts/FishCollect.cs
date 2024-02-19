@@ -21,6 +21,7 @@ public class FishCollect : MonoBehaviour
         if (other.gameObject.CompareTag ("Player"))
         {
             Destroy(gameObject);
+           
         }
     }
 }
