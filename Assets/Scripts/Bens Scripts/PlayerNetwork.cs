@@ -10,7 +10,9 @@ public class PlayerNetwork : NetworkBehaviour {
             float movement = Input.GetAxis("Horizontal");
             GetComponent<Rigidbody2D>().velocity = new Vector2(movement * speed, 0.0f);
         }
-        Transform platformObjectTransform = Instantiate(platformObjectPrefab);
+    }
+    public override void OnNetworkSpawn() {
+        _ = Instantiate(platformObjectPrefab);
         platformObjectPrefab.GetComponent<NetworkObject>().Spawn(true);
     }
 }
