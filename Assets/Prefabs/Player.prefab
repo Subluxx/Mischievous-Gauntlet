@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -1484421573051262339}
   - component: {fileID: -2259203376865209845}
   - component: {fileID: -7197687406981122287}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   GlobalObjectIdHash: 110684823
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
+  ActiveSceneSynchronization: 1
   SceneMigrationSynchronization: 1
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  platformObjectPrefab: {fileID: 8009708144990941581, guid: 4e2360480ddc74de0b04e07338f7764b, type: 3}
+  platformObjectPrefab: {fileID: 5741241597713808827, guid: 4b3c9b53352604fbd9838aea073f65f6, type: 3}
 --- !u!114 &-2259203376865209845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SyncPositionX: 1
   SyncPositionY: 1
-  SyncPositionZ: 0
+  SyncPositionZ: 1
   SyncRotAngleX: 1
   SyncRotAngleY: 0
   SyncRotAngleZ: 0
