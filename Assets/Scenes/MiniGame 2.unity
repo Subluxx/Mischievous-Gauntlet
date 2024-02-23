@@ -424,6 +424,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &973530186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973530188}
+  - component: {fileID: 973530187}
+  m_Layer: 0
+  m_Name: SeaGullSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &973530187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973530186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773d3181e55581947a5141f863cdf681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SeaGullPrefab: {fileID: 8757453882234664684, guid: 73035b19f37eb844dadaec1b2f890c82, type: 3}
+  ParrotPrefab: {fileID: 5582939727963363475, guid: 71c152af9ec2f2b4a89a46fb4ddb8788, type: 3}
+  fireForce: 5
+  spawnDelay: 2
+  spawnDir: -1
+  rotationSpawn: 0
+  ParrotSpawnChance: 0
+  MaxRand: 15
+--- !u!4 &973530188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973530186}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -9.04, y: 2.9, z: 0.032761957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &1010172776
 PrefabInstance:
   m_ObjectHideFlags: 0
