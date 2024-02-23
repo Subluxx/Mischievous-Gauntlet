@@ -5,7 +5,9 @@ using UnityEngine;
 public class ArrowObject : MonoBehaviour
 {
     public bool canBePressed;
-    public AudioSource HeartPick;
+    public AudioSource successSparkle;
+    public AudioSource failedSparkle;
+
 
     public KeyCode keyToPress;
 
@@ -53,7 +55,7 @@ public class ArrowObject : MonoBehaviour
                 Debug.Log(buttonController.comboScore);
                 animator.SetTrigger("Pop");
                 StartCoroutine(popArrow(3));
-                HeartPick.Play();
+                successSparkle.Play();
             }
         }
 

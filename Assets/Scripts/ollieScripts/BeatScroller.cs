@@ -5,11 +5,14 @@ using UnityEngine;
 public class BeatScroller : MonoBehaviour
 {
 
-
     public GameObject UpArrowPrefab;
     public GameObject DownArrowPrefab;
     public GameObject RightArrowPrefab;
     public GameObject LeftArrowPrefab;
+
+    public float x;
+    public float y;
+    public float z;
 
     public float spawnCounter;
     // Start is called before the first frame update
@@ -27,24 +30,15 @@ public class BeatScroller : MonoBehaviour
 
         if (spawnCounter > 200)
         {
-            float ypos = Random.Range(3, 7);
-            float zpos = -0.08376108f;
 
-            float xpos = -1.5f + Random.Range(0, 4);
-            CreateArrow(xpos, ypos, zpos);
-
-            xpos = 6f + Random.Range(0, 4);
-            CreateArrow(xpos, ypos, zpos);
-
-            xpos = 14f + Random.Range(0, 4);
-            CreateArrow(xpos, ypos, zpos);
+            CreateArrow();
 
             spawnCounter = 0;
         }
 
     }
 
-    public void CreateArrow(float x, float y, float z)
+    public void CreateArrow()
     {
         float randomNumber = Random.Range(0, 4);
         if (randomNumber == 0)

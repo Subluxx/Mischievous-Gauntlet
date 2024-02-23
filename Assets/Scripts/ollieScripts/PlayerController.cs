@@ -6,15 +6,12 @@ public class PlayerController : MonoBehaviour
 
 {
     Rigidbody2D rigidBody;
-    public AudioSource HeartPick;
 
-    public AudioSource Walking;
     public float speed = 4.0f;
     public float default_speed = 4.0f;
     public float running_speed = 6.0f;
     public float jumpForce = 8.0f;
-    public float airControlForce = 10.0f;
-    public float airControlMax = 1.5f;
+
     public bool isMoving = false;
     Vector2 boxExtents;
 /*    Animator animator;
@@ -83,7 +80,6 @@ public class PlayerController : MonoBehaviour
 
         if (isMoving == true)
         {
-            Walking.Play();
 
         }
 
@@ -106,7 +102,6 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Heart")
         {
-            HeartPick.Play();
             Destroy(coll.gameObject);
 
         }
