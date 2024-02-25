@@ -4,6 +4,7 @@ using UnityEngine;
 using Unity.Netcode;
 public class PlayerMovement : NetworkBehaviour {
     //components
+    Animator animator;
     public Rigidbody2D RB { get; private set; }
     public float circleRadius;
     public Vector2 circleCenter;
@@ -45,6 +46,7 @@ public class PlayerMovement : NetworkBehaviour {
 
     public override void OnNetworkSpawn() {
         RB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         circleRadius = GetComponent<CircleCollider2D>().radius;
         circleCenter = GetComponent<CircleCollider2D>().bounds.center;
     }
@@ -62,6 +64,14 @@ public class PlayerMovement : NetworkBehaviour {
         LastPressedJumpTime -= Time.deltaTime;
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+        float xspeed = Mathf.Abs(RB.velocity.x);
+        animator.SetFloat("xspeed", xspeed);
+        float yspeed = Mathf.Abs(RB.velocity.y);
+        animator.SetFloat("yspeed", yspeed);
+        //bool Jumping = IsJumping;
+        //animator.SetBool("Jumping", Jumping);
+        //bool Falling = JumpFalling;
+        //animator.SetBool("Falling", Falling);
         if (moveInput.x != 0)
             CheckDirection(moveInput.x > 0);
         if(Input.GetKeyDown(KeyCode.Space)) {

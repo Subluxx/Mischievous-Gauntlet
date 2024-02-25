@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: -2259203376865209845}
   - component: {fileID: -7197687406981122287}
   - component: {fileID: 185370674883033019}
+  - component: {fileID: -3337090709024907458}
+  - component: {fileID: -3565655241313803930}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -307,10 +309,45 @@ MonoBehaviour:
   jumpHangAccelerationMult: 1.1
   jumpHangMaxSpeedMult: 1.3
   gravityStrength: -77.77777
-  gravityScale: 7.9284167
+  gravityScale: 3.8888886
   fallGravityMult: 1.5
   maxFallSpeed: 25
   fastFallGravityMult: 2
   maxFastFallSpeed: 30
   coyoteTime: 0.1
   jumpInputBufferTime: 0.1
+--- !u!95 &-3337090709024907458
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326281477872864298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e94ad5a3eff424ec9b93fe0b987e1fad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3565655241313803930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326281477872864298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: -3337090709024907458}
