@@ -6,8 +6,7 @@ public class PlayerMovement : NetworkBehaviour {
     //components
     Animator animator;
     public Rigidbody2D RB { get; private set; }
-    public float circleRadius;
-    public Vector2 circleCenter;
+    Vector2 boxExtents;
     public bool IsFacingRight { get; private set; }
     public bool IsJumping { get; private set; }
     public float LastOnGroundTime { get; private set; }
@@ -47,8 +46,7 @@ public class PlayerMovement : NetworkBehaviour {
     public override void OnNetworkSpawn() {
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        circleRadius = GetComponent<CircleCollider2D>().radius;
-        circleCenter = GetComponent<CircleCollider2D>().bounds.center;
+        boxExtents = GetComponent<BoxCollider2D>().bounds.extents;
     }
     private void FixedUpdate() {
         if (IsLocalPlayer) {
@@ -66,12 +64,10 @@ public class PlayerMovement : NetworkBehaviour {
         moveInput.y = Input.GetAxisRaw("Vertical");
         float xspeed = Mathf.Abs(RB.velocity.x);
         animator.SetFloat("xspeed", xspeed);
-        float yspeed = Mathf.Abs(RB.velocity.y);
+        float yspeed = RB.velocity.y;
         animator.SetFloat("yspeed", yspeed);
         //bool Jumping = IsJumping;
         //animator.SetBool("Jumping", Jumping);
-        //bool Falling = JumpFalling;
-        //animator.SetBool("Falling", Falling);
         if (moveInput.x != 0)
             CheckDirection(moveInput.x > 0);
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -193,7 +189,10 @@ public class PlayerMovement : NetworkBehaviour {
         jumpForce = Mathf.Abs(gravityStrength) * jumpTimeToApex;
     }
     private bool groundCheck() {
-        RaycastHit2D result = Physics2D.CircleCast(circleCenter,circleRadius,Vector2.down,1f,ground);
-        return result;
+        Vector2 bottom = new Vector2(transform.position.x, transform.position.y - boxExtents.y);
+        Vector2 hitBoxSize = new Vector2(boxExtents.x * 2.0f, 0.05f);
+        RaycastHit2D result = Physics2D.BoxCast(bottom,hitBoxSize,0.0f,new Vector3(0.0f,-1.0f),0.0f,ground);
+        bool grounded = result.collider != null && result.normal.y > 0.9f;
+        return grounded;
     }
 }
