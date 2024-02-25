@@ -20,6 +20,8 @@ public class PlayerMovement : NetworkBehaviour {
     public float velPower;
     [HideInInspector] public float acceleration;
     [HideInInspector] public float decceleration;
+    [Range(0f, 1)] public float accelInAir; //Multipliers applied to acceleration rate when airborne.
+    [Range(0f, 1)] public float deccelInAir;
     public float frictionAmount;
     //Jump
     private bool JumpCut;
@@ -126,10 +128,15 @@ public class PlayerMovement : NetworkBehaviour {
     }
     private void Run() {
         float targetSpeed = moveInput.x * moveSpeed;
+        targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, 1);
         float accelRate = 0;
         if(LastOnGroundTime > 0) { 
             accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : decceleration;
         }
+        else { 
+            accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration * accelInAir : decceleration * deccelInAir;
+        }
+
         if ((IsJumping || JumpFalling) && Mathf.Abs(RB.velocity.y) < jumpHangTimeThreshold) {
             accelRate *= jumpHangAccelerationMult;
             targetSpeed *= jumpHangMaxSpeedMult;

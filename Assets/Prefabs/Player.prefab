@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7197687406981122287}
   - component: {fileID: 185370674883033019}
   - component: {fileID: -3337090709024907458}
-  - component: {fileID: -3565655241313803930}
+  - component: {fileID: 2310501116310766961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -252,8 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2b505643b3a4ed6bff9878b399e81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRadius: 0
-  circleCenter: {x: 0, y: 0}
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -301,7 +299,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-3565655241313803930
+--- !u!114 &2310501116310766961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,7 +308,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4326281477872864298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f9af5e34572e4d93893d31dc01bfd4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
