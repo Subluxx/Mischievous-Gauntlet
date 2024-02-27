@@ -4,9 +4,12 @@ using UnityEngine;
 using Unity.Netcode;
 public class PlayerNetwork : NetworkBehaviour {
     [SerializeField] private Transform platformObjectPrefab;
+
+    public Transform Insta { get; private set; }
+
     public override void OnNetworkSpawn() {
-        _ = Instantiate(platformObjectPrefab);
-        platformObjectPrefab.GetComponent<NetworkObject>().Spawn(true);
+        Insta = Instantiate(platformObjectPrefab);
+        Insta.GetComponent<NetworkObject>().Spawn();
     }
 }
 

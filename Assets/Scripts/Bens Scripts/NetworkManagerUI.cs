@@ -13,12 +13,21 @@ public class NetworkManagerUI : MonoBehaviour
     private void Awake() {
         serverBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartServer();
+            foreach (Transform child in gameObject.transform) {
+                child.gameObject.SetActive(false);
+            }
         });
         clientBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartClient();
+            foreach (Transform child in gameObject.transform) {
+                child.gameObject.SetActive(false);
+            }
         });
         hostBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartHost();
+            foreach (Transform child in gameObject.transform) {
+                child.gameObject.SetActive(false);
+            }
         });
     }
 }

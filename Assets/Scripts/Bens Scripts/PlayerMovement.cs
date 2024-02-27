@@ -10,7 +10,7 @@ public class PlayerMovement : NetworkBehaviour {
     public bool IsFacingRight { get; private set; }
     public bool IsJumping { get; private set; }
     public float LastOnGroundTime { get; private set; }
-    private Vector2 moveInput;
+    public Vector2 moveInput;
     public float LastPressedJumpTime { get; private set; }
     [SerializeField] private LayerMask ground;
     //Run
