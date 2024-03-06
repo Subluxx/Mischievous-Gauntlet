@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SeaGullPrefab: {fileID: 8757453882234664684, guid: 73035b19f37eb844dadaec1b2f890c82, type: 3}
+  ParrotPrefab: {fileID: 0}
   fireForce: 5
   spawnDelay: 2
   spawnDir: 0
+  rotationSpawn: 90
+  ParrotSpawnChance: 0
+  MaxRand: 15
