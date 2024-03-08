@@ -36,7 +36,7 @@ public class FishSpawnerBehaviour : MonoBehaviour
         if (FishSpawnChance == MaxRand - 1)
         {
             GameObject Fish = Instantiate(FishPrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, rotationSpawn));
-            Fish.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
+            //Fish.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
         }
         StartCoroutine(SpawnFish(spawnDelay));
     }
