@@ -33,7 +33,7 @@ public class SeaGullSpawnBehaviour : MonoBehaviour
         if (ParrotSpawnChance == maxRand / 2)
         {
             GameObject parrot = Instantiate(ParrotPrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-            parrot.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
+            parrot.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce * 1.5f, ForceMode2D.Impulse);
         }
         else
         {

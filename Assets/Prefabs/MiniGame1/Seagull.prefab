@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7786520468096435259
 SpriteRenderer:
@@ -173,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 4
+  deathsoundObject: {fileID: 356347803031444431, guid: 40762d7ff9509fb408c33c40d3bff192, type: 3}
+  deathFeathers: {fileID: 8268937419796073440, guid: f9c988bb39f3e8b4ea0f06ed8aa41436, type: 3}
 --- !u!95 &6004338550138358917
 Animator:
   serializedVersion: 5

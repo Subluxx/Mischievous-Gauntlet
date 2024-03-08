@@ -176,6 +176,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 4
   flightSpeedForce: 20
+  deathsoundObject: {fileID: 356347803031444431, guid: 40762d7ff9509fb408c33c40d3bff192, type: 3}
+  deathFeathers: {fileID: 8268937419796073440, guid: f9c988bb39f3e8b4ea0f06ed8aa41436, type: 3}
 --- !u!95 &-3885036922779184159
 Animator:
   serializedVersion: 5
