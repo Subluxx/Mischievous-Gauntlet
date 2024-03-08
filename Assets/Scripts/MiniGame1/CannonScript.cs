@@ -8,6 +8,7 @@ public class CannonScript : MonoBehaviour
     public Transform firePoint;
     public float fireForce = 20f;
     public ShakeBehaviour shakeBehaviour;
+    public ParticleSystem cannonSmoke;
     [SerializeField] public float duration = 1f;
     [SerializeField] public float magnitude = 1f;
     // Start is called before the first frame update
@@ -16,7 +17,9 @@ public class CannonScript : MonoBehaviour
     {
         GameObject projectile = Instantiate(ProjectilePrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 180f));
         projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-        
+
+        cannonSmoke.Play();
+
         StartCoroutine(shakeBehaviour.Shake(duration, magnitude));
     }
 }
