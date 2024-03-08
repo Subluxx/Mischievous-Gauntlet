@@ -159,12 +159,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6051334624761616986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f25c4899b2dce4894922939afe809ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Platform: {fileID: 6051334624761616986}
   endPoint: {fileID: 7291797379839732421, guid: 0b2398e0875b44baf812b40c4868702a, type: 3}
   distanceBetweenMin: 0
   distanceBetweenMax: 0
