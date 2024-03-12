@@ -21,17 +21,18 @@ public class PlatformCreation : NetworkBehaviour
     {
         Insta = Instantiate(platformObjectPrefab);
         Insta.GetComponent<NetworkObject>().Spawn();
-        for (int i = 0; i < Platforms.Length; i++)
-        {
-            Insta2 = Instantiate(Platforms[i]);
-            Insta2.GetComponent<NetworkObject>().Spawn();
-        }
+        //for (int i = 0; i < Platforms.Length; i++)
+        //{
+        //    Insta2 = Instantiate(Platforms[i]);
+        //    Insta2.GetComponent<NetworkObject>().Spawn();
+        //}
         Insta3 = Instantiate(endPoint);
         Insta3.GetComponent<NetworkObject>().Spawn();
     }
     void Start()
     {
-        previousPosition = Platforms[platformSelector].transform.position.x;
+        previousPosition = platformObjectPrefab.transform.position.x;
+        //Debug.Log(platformSelector);
         platformWidths = new float[Platforms.Length];
         for (int i = 0; i < Platforms.Length; i++)
         {
@@ -41,13 +42,16 @@ public class PlatformCreation : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Platforms[platformSelector].transform.position.x < endPoint.position.x)
+        if (previousPosition < endPoint.position.x)
         {
+            //Debug.Log("working");
             distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
             platformSelector = Random.Range(0, Platforms.Length);
-            Platforms[platformSelector].transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween, 0, 0);
+            Insta2 = Instantiate(Platforms[platformSelector]);
+            Insta2.GetComponent<NetworkObject>().Spawn();
+            Insta2.transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween, 0, 0);
             //transform.position = new Vector3(transform.position.x+platformWidth+distanceBetween,)
-            previousPosition = Platforms[platformSelector].transform.position.x;
+            previousPosition = Insta2.transform.position.x;
         }
     }
 }
