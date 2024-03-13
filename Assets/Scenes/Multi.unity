@@ -360,7 +360,6 @@ GameObject:
   m_Component:
   - component: {fileID: 716595065}
   - component: {fileID: 716595064}
-  - component: {fileID: 716595067}
   - component: {fileID: 716595063}
   - component: {fileID: 716595066}
   m_Layer: 0
@@ -463,19 +462,6 @@ MonoBehaviour:
   SceneMigrationSynchronization: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &716595067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716595062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a976a36ee1be4bbebc380d8427e5df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedPlayer: {fileID: 8299776496913622978, guid: 24df53a59ddf24faab94493c5ef2e652, type: 3}
 --- !u!1 &744212829
 GameObject:
   m_ObjectHideFlags: 0
