@@ -73,11 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< HEAD
   m_SortingOrder: 0
-=======
-  m_SortingOrder: 1
->>>>>>> origin/janBranch
   m_Sprite: {fileID: 21300000, guid: e2146c55c2aebeb4c81a4db414d2e197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +97,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c974d84cf7aea045ab40d7d3501d655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
-  faceType: 
->>>>>>> origin/janBranch
