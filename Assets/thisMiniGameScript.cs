@@ -99,7 +99,7 @@ public class thisMiniGameScript : MonoBehaviour
         //Debug.Log($"can spawn face: {canSpawnFace}");
         StartCoroutine(addTimer());
         playerCountScript.instance.checkPlayerCount();
-        addPlayer();
+        
         
     }
 
