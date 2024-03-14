@@ -103,12 +103,9 @@ public class thisMiniGameScript : MonoBehaviour
         
     }
 
-    void addPlayer()
+    public void addPlayer()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Instantiate(player, Vector2.zero, Quaternion.identity);
-        }
+        Instantiate(player, Vector2.zero, Quaternion.identity);
     }
 
 }
