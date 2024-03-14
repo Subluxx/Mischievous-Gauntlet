@@ -28,6 +28,9 @@ public class PlayerScript : MonoBehaviour
     {
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, aimAngle);
+        if(aimAngle < 30 && aimAngle > -30)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, aimAngle);
+        }
     }
 }
