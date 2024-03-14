@@ -32,11 +32,11 @@ public class movingThingScript : MonoBehaviour
         }
         if (!ymovingup)
         {
-            toMove.y += scrollspeed;
+            toMove.y += 0.005f;
         }
         else
         {
-            toMove.y -= scrollspeed;
+            toMove.y -= 0.005f;
         }
 
 
