@@ -10,20 +10,19 @@ public class durationMgr : MonoBehaviour
     [SerializeField] private float miniGameDuration;
     float currentDuration;
 
-    public GameObject miniGManager;
-    private miniGManager m;
+    //public GameObject manager;
 
     private void Start()
     {
-        m = miniGManager.GetComponent<miniGManager>();
-
+        miniGameManager2.hasEnded = false;
         currentDuration = 0;
-        setDuration(10);
+        setDuration(miniGameDuration);
     }
 
     private void Update()
     {
-        Debug.Log(m.HasEnded);
+        miniGameManager2.checkEnd();
+        //Debug.Log(m.HasEnded);
         StartCoroutine(countUp());
     }
 
@@ -36,13 +35,14 @@ public class durationMgr : MonoBehaviour
     //coroutine responsible for minigame time counter
     IEnumerator countUp()
     {
-        Debug.Log(currentDuration);
+        //Debug.Log(currentDuration);
         //current duration is incremented
         currentDuration += Time.deltaTime;
         //check if the current duration has reached the miniGameDuration
         if (currentDuration > miniGameDuration)
         {
-            m.setHasEnded();
+            miniGameManager2.setHasEnded();
+            
         }
         yield return null;
     }

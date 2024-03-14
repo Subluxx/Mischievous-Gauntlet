@@ -4,44 +4,63 @@ using UnityEngine;
 
 public class playerCountScript : MonoBehaviour
 {
-    //int member to keep track of player count.
-    int playerCount;
+    public static playerCountScript instance;
+    //bool member -> condition for if the script should check the player count or not
+    bool startCheck;
+
+    public void setStartCheck()
+    { 
+        startCheck = true;
+    }
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    //int var to keep track of current players in the game
+    int currentPlayerCount;
 
     //method to add to the player count
     public void addPlayerCount(int i)
     {
-        playerCount += i;
+        currentPlayerCount += i;
+        startCheck = true;
     }
 
     //method to subtract from the playercount
     public void subPlayerCount(int i)
     { 
-        playerCount -= i;
+        currentPlayerCount -= i;
     }
 
-    public GameObject miniGManager;
-    private miniGManager m;
+    
 
     //method to check if a player count has reached a certain threshold
-    public void checkPlayerCount(int i)
+    public void checkPlayerCount()
     {
-        if (playerCount <= i)
+        if (startCheck == true)
         {
-            //do something
-            m.setHasEnded();
+            if (currentPlayerCount == 0)
+            {
+                miniGameManager2.setHasEnded();
+            }
         }
+        
     }
 
     private void Start()
     {
-        m = miniGManager.GetComponent<miniGManager>();
+        startCheck = false;
+        //upon start -> set the current player count to 0
+        currentPlayerCount = 0;
+        Debug.Log($"player count : {currentPlayerCount}");
         
     }
 
     private void Update()
     {
-        Debug.Log("player count: " + playerCount);
-        checkPlayerCount(0);
+        //Debug.Log($"player count : {currentPlayerCount}");
     }
 
 
