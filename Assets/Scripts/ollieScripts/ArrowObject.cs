@@ -26,7 +26,7 @@ public class ArrowObject : MonoBehaviour
     public ButtonController buttonController;
     void Start()
     {
-        beatTempo = 120 / 120f;
+        /*beatTempo = 120 / 120f;*/
         hasStarted = true;
 
         animator = GetComponent<Animator>();

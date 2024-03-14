@@ -259,7 +259,7 @@ MonoBehaviour:
   successSparkle: {fileID: 0}
   failedSparkle: {fileID: 0}
   keyToPress: 276
-  beatTempo: 60
+  beatTempo: 120
   hasStarted: 1
   animator: {fileID: 2026616665761814254}
   player: {fileID: 0}

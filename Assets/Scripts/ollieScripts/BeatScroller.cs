@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BeatScroller : MonoBehaviour
 {
 
@@ -28,7 +29,7 @@ public class BeatScroller : MonoBehaviour
 
 
 
-        if (spawnCounter > 400)
+        if (spawnCounter > 100)
         {
 
             CreateArrow();
@@ -43,19 +44,23 @@ public class BeatScroller : MonoBehaviour
         float randomNumber = Random.Range(0, 4);
         if (randomNumber == 0)
         {
-            Instantiate(UpArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
+/*            UpArrowPrefab.GetComponent<ArrowObject>().enabled = true;
+*/            Instantiate(UpArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
         }
         else if (randomNumber == 1)
         {
-            Instantiate(DownArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
+/*            DownArrowPrefab.GetComponent<ArrowObject>().enabled = true;
+*/            Instantiate(DownArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
         }
         else if (randomNumber == 2)
         {
-            Instantiate(LeftArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
+/*            LeftArrowPrefab.GetComponent<ArrowObject>().enabled = true;
+*/            Instantiate(LeftArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
         }
         else if (randomNumber == 3)
         {
-            Instantiate(RightArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
+/*            RightArrowPrefab.GetComponent<ArrowObject>().enabled = true;
+*/            Instantiate(RightArrowPrefab, new Vector3(x, y, z), Quaternion.identity);
         }
 
     }
