@@ -25,8 +25,8 @@ public class ButtonController : MonoBehaviour
     {
         if (Input.GetKeyDown(keyToPress))
         {
-            Debug.Log("tap");
-            theSR.sprite = pressedImage;
+/*            Debug.Log("tap");
+*/            theSR.sprite = pressedImage;
         }
 
         if (Input.GetKeyUp(keyToPress))
@@ -37,8 +37,8 @@ public class ButtonController : MonoBehaviour
 
         if (comboScore >= 5)
         {
-            Debug.Log("New move!");
-/*            onScreenMessages.newMovesBool = true;
+/*            Debug.Log("New move!");
+*//*            onScreenMessages.newMovesBool = true;
 */            comboScore = 0;
         }
     }

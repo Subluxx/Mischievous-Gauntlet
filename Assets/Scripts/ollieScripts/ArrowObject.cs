@@ -16,8 +16,14 @@ public class ArrowObject : MonoBehaviour
     public bool hasStarted;
     public Animator animator;
 
+    public PlayerController player;
+    public DistanceScript distanceText;
+
+    private string playerText = "";
+
+    [SerializeField] public float destroyDelay = 10.0f;
+
     public ButtonController buttonController;
-    // Start is called before the first frame update
     void Start()
     {
         beatTempo = 120 / 120f;
@@ -26,9 +32,15 @@ public class ArrowObject : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+
+        if (transform.position.y < -5)
+        {
+
+            /*StartCoroutine(popArrow(1));*/
+        }
+
         if (!hasStarted)
         {
             if (Input.anyKeyDown)
@@ -43,26 +55,26 @@ public class ArrowObject : MonoBehaviour
 
 
 
-
-
-
         if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed)
             {
+                player.distance += 100;
+                playerText = player.distance.ToString() + " m";
+                distanceText.displayText = playerText;
 
                 buttonController.comboScore += 1;
                 Debug.Log(buttonController.comboScore);
                 animator.SetTrigger("Pop");
-                StartCoroutine(popArrow(3));
+                
                 successSparkle.Play();
+
+                StartCoroutine(popArrow(0.5f));
+                beatTempo = 0;
             }
         }
 
-        if (transform.position.y < -2)
-        {
-            /*Destroy(gameObject);*/
-        }
+       
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -81,9 +93,10 @@ public class ArrowObject : MonoBehaviour
         }
     }
 
-    IEnumerator popArrow(int secs)
+    IEnumerator popArrow(float secs)
     {
         yield return new WaitForSeconds(secs);
-        /*gameObject.SetActive(false);*/
+        Destroy(gameObject);
+
     }
 }

@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     float inputHorizontal;
     float inputVertical;
 
+    public float distance = 0f;
+
 
 
     // Use this for initialization

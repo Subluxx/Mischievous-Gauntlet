@@ -18,7 +18,7 @@ public class BeatScroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        spawnCounter = 0;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class BeatScroller : MonoBehaviour
 
 
 
-        if (spawnCounter > 200)
+        if (spawnCounter > 400)
         {
 
             CreateArrow();
