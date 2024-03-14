@@ -21,6 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/testScene2.unity
     guid: f6285abc9fbe196429bc50e019e6cf75
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Multi.unity
     guid: 7aaa965a088f841ac9395582da3144ac
+=======
+    path: Assets/Scenes/testScene3.unity
+    guid: c612f833897160b4da2a3513d63ee3a4
+  - enabled: 1
+    path: Assets/Scenes/endScene.unity
+    guid: def3ae3ca37e81b4198900514a052da2
+>>>>>>> origin/janBranch
   m_configObjects: {}
