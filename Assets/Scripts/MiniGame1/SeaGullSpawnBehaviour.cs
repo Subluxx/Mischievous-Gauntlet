@@ -14,12 +14,10 @@ public class SeaGullSpawnBehaviour : MonoBehaviour
     [SerializeField] public bool FlyingRight;
     public int ParrotSpawnChance;
     [SerializeField] public int maxRand;
-    public Vector3 spawnPosition;
-    public float yMoving;
-    public bool ymovingup = false;
+    Vector3 spawnPosition;
+    float yMoving;
+    bool ymovingup = false;
     [SerializeField] float boundingArea;
-    public bool gameWon = false;
-    
     // Start is called before the first frame update
 
     private void Awake()
@@ -59,9 +57,6 @@ public class SeaGullSpawnBehaviour : MonoBehaviour
             yMoving -= 1f;
         }
         transform.localPosition = new Vector3(spawnPosition.x, yMoving, spawnPosition.z);
-        if(gameWon == false)
-        {
-            StartCoroutine(SpawnSeaGull(spawnDelay));
-        }
+        StartCoroutine(SpawnSeaGull(spawnDelay));
     }
 }
