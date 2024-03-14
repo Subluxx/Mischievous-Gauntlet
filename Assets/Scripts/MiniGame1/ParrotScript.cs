@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-public class SeaGullScript : MonoBehaviour
+public class ParrotScript : MonoBehaviour
 {
     [SerializeField] public float destroyDelay = 10.0f;
+    [SerializeField] public float flightSpeedForce = 20f;
     public GameObject deathsoundObject;
     public ParticleSystem deathFeathers;
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,11 +24,10 @@ public class SeaGullScript : MonoBehaviour
     {
         RemoveProjectile(destroyDelay);
     }
-    
+
     IEnumerator RemoveProjectile(float delayVar)
     {
         yield return new WaitForSeconds(delayVar);
         Destroy(gameObject);
     }
-
 }
