@@ -519,7 +519,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.990566, g: 0.893798, b: 0.65975434, a: 1}
+  m_Color: {r: 0.7924528, g: 0.46784014, b: 0.026913527, a: 1}
   m_Intensity: 0.81
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.990566, g: 0.893798, b: 0.65975434, a: 1}
+  m_Color: {r: 0.9245283, g: 0.69775724, b: 0.15350664, a: 1}
   m_Intensity: 0.81
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -1849,7 +1849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740366486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: -10.9, z: 0.010397925}
+  m_LocalPosition: {x: -7.67, y: -11.48, z: 0.010397925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.990566, g: 0.893798, b: 0.65975434, a: 1}
+  m_Color: {r: 0.8207547, g: 0.6239922, b: 0.15176223, a: 1}
   m_Intensity: 0.81
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -4913,7 +4913,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.990566, g: 0.893798, b: 0.65975434, a: 1}
+  m_Color: {r: 0.9433962, g: 0.70414424, b: 0.12993953, a: 1}
   m_Intensity: 0.81
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -10759,6 +10759,18 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.0049393177
       objectReference: {fileID: 0}
+    - target: {fileID: 1824359335206025052, guid: 060778e2615071842a49bcf3b7856624, type: 3}
+      propertyPath: m_Color.b
+      value: 0.034798916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824359335206025052, guid: 060778e2615071842a49bcf3b7856624, type: 3}
+      propertyPath: m_Color.g
+      value: 0.34367886
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824359335206025052, guid: 060778e2615071842a49bcf3b7856624, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
     - target: {fileID: 5532584644764169961, guid: 060778e2615071842a49bcf3b7856624, type: 3}
       propertyPath: m_Name
       value: beat_up
@@ -10819,6 +10831,18 @@ PrefabInstance:
     - target: {fileID: 1797961664515615941, guid: 46aa9609b2778474daec03b68c72ae92, type: 3}
       propertyPath: m_Offset.y
       value: 0.0006740093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978250650392251388, guid: 46aa9609b2778474daec03b68c72ae92, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978250650392251388, guid: 46aa9609b2778474daec03b68c72ae92, type: 3}
+      propertyPath: m_Color.g
+      value: 0.98445594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4978250650392251388, guid: 46aa9609b2778474daec03b68c72ae92, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7640685956642799077, guid: 46aa9609b2778474daec03b68c72ae92, type: 3}
       propertyPath: player
@@ -10989,6 +11013,18 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.00493896
       objectReference: {fileID: 0}
+    - target: {fileID: 8584065116916918413, guid: 7fb05d1fddd9f804c8bb8b2641077db4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584065116916918413, guid: 7fb05d1fddd9f804c8bb8b2641077db4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.41749042
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584065116916918413, guid: 7fb05d1fddd9f804c8bb8b2641077db4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19366328
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11026,6 +11062,18 @@ PrefabInstance:
       propertyPath: buttonController
       value: 
       objectReference: {fileID: 589839376}
+    - target: {fileID: 1267718885403441120, guid: 16f6d1e5f64adb44497cdccc7703a0d4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1817729
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267718885403441120, guid: 16f6d1e5f64adb44497cdccc7703a0d4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267718885403441120, guid: 16f6d1e5f64adb44497cdccc7703a0d4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.41808128
+      objectReference: {fileID: 0}
     - target: {fileID: 3490641112797781196, guid: 16f6d1e5f64adb44497cdccc7703a0d4, type: 3}
       propertyPath: m_Size.x
       value: 0.5357151
