@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
-using UnityEditor.Timeline;
 using UnityEngine;
 
 public class SeaGullSpawnBehaviour : MonoBehaviour

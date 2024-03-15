@@ -260,41 +260,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31896347}
   m_CullTransparentMesh: 1
---- !u!1 &312497582 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9068674184016234706, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
-  m_PrefabInstance: {fileID: 2038476442}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &312497583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312497582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0097477be15d54bb6872fadea3dec9e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  miniGameDuration: 5
---- !u!1 &466097990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8814811171879608332, guid: 840811d9e193b45c48c39373daf5b0b0, type: 3}
-  m_PrefabInstance: {fileID: 1970723316}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &466097991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466097990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760d6a9e503ee4a2e88c95002907d34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &602969673
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,13 +860,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8814811171879608333, guid: 840811d9e193b45c48c39373daf5b0b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8814811171879608332, guid: 840811d9e193b45c48c39373daf5b0b0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 466097991}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 840811d9e193b45c48c39373daf5b0b0, type: 3}
 --- !u!1001 &2038476442
 PrefabInstance:
@@ -911,6 +874,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2254192850787625196, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
+      propertyPath: miniGameDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9068674184016234700, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -963,8 +930,5 @@ PrefabInstance:
     - {fileID: 9068674184016234701, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9068674184016234706, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 312497583}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
