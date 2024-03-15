@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
 
-    public CannonScript Cannon;
-    Vector2 mousePosition;
-    Rigidbody2D rb;
+    public CannonScript cannon;
+    public Vector2 mousePosition;
+    public Rigidbody2D rb;
+    private Camera _camera;
+    private bool _isCameraNotNull;
 
     private void Start()
     {
+        _isCameraNotNull = _camera != null;
+        _camera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -18,10 +23,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (_isCameraNotNull) mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButtonDown("Fire1"))
         {
-            Cannon.Fire();
+            cannon.Fire();
         }
     }
     private void FixedUpdate()
