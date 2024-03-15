@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class newManager
 {
-    public static string[] gameSceneNames = {"testScene1", "testScene2", "testScene3" };
+    public static string[] gameSceneNames = {"playerLobby" , "janScene" , "joeScene", "ollieScene", "benScene"};
     public static List<string> currentGameSceneOrder = new List<string>();
 
     public static int index;
