@@ -6,17 +6,19 @@ using UnityEngine.UI;
 
 public class NetworkManagerUI : MonoBehaviour
 {
-    [SerializeField] private Button serverBtn;
+    //[SerializeField] private Button serverBtn;
     [SerializeField] private Button clientBtn;
     [SerializeField] private Button hostBtn;
 
     private void Awake() {
-        serverBtn.onClick.AddListener(() => {
-            NetworkManager.Singleton.StartServer();
-            foreach (Transform child in gameObject.transform) {
-                child.gameObject.SetActive(false);
-            }
-        });
+        //serverBtn.onClick.AddListener(() =>
+        //{
+        //    NetworkManager.Singleton.StartServer();
+        //    foreach (Transform child in gameObject.transform)
+        //    {
+        //        child.gameObject.SetActive(false);
+        //    }
+        //});
         clientBtn.onClick.AddListener(() => {
             NetworkManager.Singleton.StartClient();
             foreach (Transform child in gameObject.transform) {
