@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isCameraNotNull) mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButtonDown("Fire1"))
         {
             cannon.Fire();

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/joeScene.unity
     guid: 819475409bba21d49bd3846e61113590
   - enabled: 1
-    path: Assets/Scenes/menuTest.unity
+    path: Assets/Scenes/janScene.unity
     guid: 356efb64830a6c946a07fe0eb498f1c1
   - enabled: 0
     path: Assets/Scenes/testScenes/testScene1.unity
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/benScene.unity
     guid: 7aaa965a088f841ac9395582da3144ac
   - enabled: 1
-    path: Assets/Scenes/janScene.unity
+    path: Assets/Scenes/JanScene/janMinigame.unity
     guid: 7cf855507032249d09584aec0e140bc1
   - enabled: 1
     path: Assets/Scenes/endScene.unity
