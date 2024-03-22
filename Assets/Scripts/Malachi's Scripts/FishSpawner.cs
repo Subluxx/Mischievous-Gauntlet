@@ -32,12 +32,10 @@ public class FishSpawnerBehaviour : MonoBehaviour
     IEnumerator SpawnFish(float delayVar)
     {
         yield return new WaitForSeconds(delayVar);
-        FishSpawnChance = Random.Range(0, MaxRand);
-        if (FishSpawnChance == MaxRand - 1)
-        {
+        
             GameObject Fish = Instantiate(FishPrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, rotationSpawn));
             //Fish.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
-        }
+        
         StartCoroutine(SpawnFish(spawnDelay));
     }
 }

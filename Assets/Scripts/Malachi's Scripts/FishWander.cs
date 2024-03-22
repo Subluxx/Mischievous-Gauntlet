@@ -17,7 +17,7 @@ public class Wanderer : MonoBehaviour
     internal float decisionTimeCount = 0;
 
     // The possible directions that the object can move int, right, left, up, down, and zero for staying in place.
-    internal Vector3[] moveDirections = new Vector3[] { Vector3.left, Vector3.right, Vector3.down, Vector3.up, Vector3.zero, };
+    internal Vector3[] moveDirections = new Vector3[] { Vector3.left, Vector3.right, Vector3.down, Vector3.up,};
     internal int currentMoveDirection;
 
     // Use this for initialization
