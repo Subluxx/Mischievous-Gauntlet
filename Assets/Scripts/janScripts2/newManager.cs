@@ -25,7 +25,7 @@ public static class newManager
     {
         for (int i = 0; i < currentGameSceneOrder.Count; i++)
         {
-            Debug.Log($"element {i} is {currentGameSceneOrder[i]}");
+            //Debug.Log($"element {i} is {currentGameSceneOrder[i]}");
         }
     }
 
