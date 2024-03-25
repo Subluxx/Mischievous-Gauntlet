@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     private Camera _camera;
     private bool _isCameraNotNull;
+    public int score;
 
     private void Start()
     {
