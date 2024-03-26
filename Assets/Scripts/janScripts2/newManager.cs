@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
+using System;
 using UnityEngine.SceneManagement;
 
 public static class newManager
@@ -29,18 +30,20 @@ public static class newManager
         }
     }
 
-    public static void loadGame()
+    public static string loadGame()
     {
         //if the index number in the new manager is less than the max number of scenes
         if (newManager.index < currentGameSceneOrder.Count)
         {
+            //var status = new NetworkManager.SceneManager.LoadScene(currentGameSceneOrder[index], LoadSceneMode.Single);
+            return currentGameSceneOrder[index];
             //SceneManager.LoadScene(currentGameSceneOrder[index]);
-            //NetworkManager.SceneManager.LoadScene(currentGameSceneOrder[index], LoadSceneMode.Additive);
         }
         //if all minigames have been played -> load the game over scene
         else 
         {
-            loadEndScene();
+            return "endScene";
+           // loadEndScene();
         }
         
         //increment index
