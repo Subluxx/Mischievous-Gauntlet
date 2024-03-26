@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class ParrotScript : MonoBehaviour
+public class ParrotScript : NetworkBehaviour
 {
     [SerializeField] public float destroyDelay = 10.0f;
     [SerializeField] public float flightSpeedForce = 20f;
@@ -16,7 +17,7 @@ public class ParrotScript : MonoBehaviour
         deathfeather.GetComponent<ParticleSystem>().Play();
         Destroy(gameObject);
     }
-    private void Awake()
+    public override void OnNetworkSpawn()
     {
         StartCoroutine(RemoveProjectile(destroyDelay));
     }

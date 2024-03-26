@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : NetworkBehaviour
 {
-
     public CannonScript cannon;
     public Vector2 mousePosition;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Camera _camera;
     private bool _isCameraNotNull;
     public int score;
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
         _isCameraNotNull = _camera != null;
         _camera = Camera.main;

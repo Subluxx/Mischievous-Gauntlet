@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.Mathematics;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class SeaGullSpawnBehaviour : MonoBehaviour
+public class SeaGullSpawnBehaviour : NetworkBehaviour
 {
-    public GameObject SeaGullPrefab;
-    public GameObject ParrotPrefab;
+    [SerializeField] private GameObject SeaGullPrefab;
+    [SerializeField] private GameObject ParrotPrefab;
+    public GameObject InstantiateSeagull { get; private set; }
+    public GameObject InstantiateParrot { get; private set; }
+    
     [SerializeField] public float fireForce = 20f;
     [SerializeField] public float spawnDelay = 5.0f;
     [SerializeField] public bool FlyingRight;
@@ -19,10 +25,14 @@ public class SeaGullSpawnBehaviour : MonoBehaviour
     [SerializeField] float boundingArea;
     // Start is called before the first frame update
 
-    private void Awake()
+    public override void OnNetworkSpawn() 
     {
         spawnPosition = transform.position;
         yMoving = transform.position.y;
+
+        InstantiateSeagull = Instantiate(SeaGullPrefab);
+        InstantiateParrot = Instantiate(ParrotPrefab);
+        
         StartCoroutine(SpawnSeaGull(spawnDelay));
     }
     IEnumerator SpawnSeaGull(float delayVar)
@@ -31,13 +41,15 @@ public class SeaGullSpawnBehaviour : MonoBehaviour
         ParrotSpawnChance = Random.Range(0, maxRand);
         if (ParrotSpawnChance == maxRand / 2)
         {
-            GameObject parrot = Instantiate(ParrotPrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-            parrot.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce * 1.5f, ForceMode2D.Impulse);
+            InstantiateParrot.GetComponent<NetworkObject>().Spawn();
+            InstantiateParrot.transform.position = new Vector3(transform.position.x,transform.position.y);
+            InstantiateParrot.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce * 1.5f, ForceMode2D.Impulse);
         }
         else
         {
-            GameObject SeaGull = Instantiate(SeaGullPrefab, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
-            SeaGull.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
+            InstantiateSeagull.GetComponent<NetworkObject>().Spawn();
+            InstantiateSeagull.transform.position = new Vector3(transform.position.x,transform.position.y);
+            InstantiateSeagull.GetComponent<Rigidbody2D>().AddForce(transform.up * fireForce, ForceMode2D.Impulse);
         }
         if (yMoving > spawnPosition.y + boundingArea)
         {
