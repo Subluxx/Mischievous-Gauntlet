@@ -8,10 +8,11 @@ using UnityEngine.SceneManagement;
 
 public static class newManager
 {
-    public static string[] gameSceneNames = { "playerLobby", "janScene" , "joeScene", "ollieScene", "benScene"};
+    public static string[] gameSceneNames = { "playerLobby", "benScene", "janScene" , "joeScene", "ollieScene"};
     public static List<string> currentGameSceneOrder = new List<string>();
+    public static string _scene;
 
-    public static int index;
+    public static int index =-1;
 
     public static void addScenesToGame()
     {
@@ -36,7 +37,10 @@ public static class newManager
         if (newManager.index < currentGameSceneOrder.Count)
         {
             //var status = new NetworkManager.SceneManager.LoadScene(currentGameSceneOrder[index], LoadSceneMode.Single);
-            return currentGameSceneOrder[index];
+            //int placeHolder = index;
+            Debug.Log(index);
+            _scene = currentGameSceneOrder[index];
+            return _scene;
             //SceneManager.LoadScene(currentGameSceneOrder[index]);
         }
         //if all minigames have been played -> load the game over scene
@@ -47,7 +51,6 @@ public static class newManager
         }
         
         //increment index
-        index++;
     }
 
     //a method to load in the scene that is supposed to appear when all the minigames have been played

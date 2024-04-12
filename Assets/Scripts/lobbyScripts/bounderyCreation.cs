@@ -27,4 +27,10 @@ public class bounderyCreation : NetworkBehaviour
             }
         }
     }
+    public override void OnNetworkDespawn()
+    {
+        Insta.GetComponent<NetworkObject>().Despawn();
+        Insta2.GetComponent<NetworkObject>().Despawn();
+        base.OnNetworkDespawn();
+    }
 }
