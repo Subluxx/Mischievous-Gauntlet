@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 819475409bba21d49bd3846e61113590
   - enabled: 1
     path: Assets/Scenes/menuTest.unity
-    guid: 356efb64830a6c946a07fe0eb498f1c1
+    guid: 1736e78c9758e46139cf7fbfdd4441ea
   - enabled: 0
     path: Assets/Scenes/testScenes/testScene1.unity
     guid: 4e923f31233202c499264ba9a71cf28f
@@ -25,8 +25,8 @@ EditorBuildSettings:
     guid: 7aaa965a088f841ac9395582da3144ac
   - enabled: 1
     path: Assets/Scenes/janScene.unity
-    guid: 7cf855507032249d09584aec0e140bc1
-  - enabled: 1
+    guid: f46ed93a56b894e9a95507be5eacf3e9
+  - enabled: 0
     path: Assets/Scenes/endScene.unity
     guid: 03aa3d85c002aa443959d08a4cee9dbe
   - enabled: 1
