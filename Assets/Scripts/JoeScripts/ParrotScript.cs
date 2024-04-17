@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ParrotScript : MonoBehaviour
+using Unity.Netcode;
+public class ParrotScript : NetworkBehaviour
 {
     [SerializeField] public float destroyDelay = 10.0f;
     [SerializeField] public float flightSpeedForce = 20f;

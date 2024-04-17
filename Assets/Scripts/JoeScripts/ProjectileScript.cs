@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ProjectileScript : MonoBehaviour
+using Unity.Netcode;
+public class ProjectileScript : NetworkBehaviour
 {
     public float destroyDelay = 10.0f;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Insta.GetComponent<NetworkObject>().Despawn();
         Destroy(gameObject);
 
     }

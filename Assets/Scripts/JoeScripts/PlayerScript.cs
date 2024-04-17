@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerScript : MonoBehaviour
+using Unity.Netcode;
+public class PlayerScript : NetworkBehaviour
 {
 
     public CannonScript Cannon;
     Vector2 mousePosition;
     Rigidbody2D rb;
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
         rb = GetComponent<Rigidbody2D>();
     }

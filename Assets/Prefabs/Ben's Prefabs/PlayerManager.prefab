@@ -48,10 +48,9 @@ MonoBehaviour:
   playerPrefabLobby: {fileID: 4326281477872864298, guid: 3d3f40174b4cb4c9da1278b2316d8284, type: 3}
   playerPrefabBen: {fileID: 4326281477872864298, guid: d2e889c29436948e5a52b81036071e52, type: 3}
   playerPrefabJan: {fileID: 0}
-  playerPrefabJoe: {fileID: 0}
+  playerPrefabJoe: {fileID: 4755909235722568485, guid: 35f83779d37204d73b492362ffbda588, type: 3}
   playerPrefabOllie: {fileID: 0}
-  mainManagerObj: {fileID: 4146523840673852223, guid: a9162198a5a2d441bae46d4a9912cba2, type: 3}
-  mainManager2s: 
+  _scene: 
 --- !u!114 &939123574401287544
 MonoBehaviour:
   m_ObjectHideFlags: 0

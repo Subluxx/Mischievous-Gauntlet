@@ -3,7 +3,12 @@ guid: c3cf6a08c82198d40b1a7de9b330fe6e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ProjectilePrefab: {fileID: 377159943242811677, guid: e0fcd8084cd27184d92edf281ea1e48f, type: 3}
+  - firePoint: {instanceID: 0}
+  - shakeBehaviour: {instanceID: 0}
+  - cannonSmoke: {instanceID: 0}
+  - cannonSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
