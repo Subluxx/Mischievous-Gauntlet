@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6145590057226065113}
   - component: {fileID: 550234474273018218}
   - component: {fileID: 7022595691361373302}
+  - component: {fileID: 2631475578554450050}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Fish
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7071504185596003751
 SpriteRenderer:
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.6132076, g: 0.251068, b: 0.251068, a: 1}
+  m_Color: {r: 0.5911949, g: 1, b: 0.87827927, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -158,3 +159,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2631475578554450050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774077980538934246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b08a80905c994249b1ffffa1b1a6b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
