@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public static class newManager
 {
-    public static string[] gameSceneNames = { "playerLobby", "joeScene", "janScene" , "benScene", "ollieScene"};
+    public static string[] gameSceneNames = { "playerLobby", "benScene", "janScene" , "joeScene", "ollieScene"};
     public static List<string> currentGameSceneOrder = new List<string>();
     public static string _scene;
 
