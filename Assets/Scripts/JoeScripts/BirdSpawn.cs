@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+//using System.Numerics;
 
 public class BirdSpawn : NetworkBehaviour
 {
@@ -11,5 +12,6 @@ public class BirdSpawn : NetworkBehaviour
     {
         Insta = Instantiate(spawnBehaviourPrefab);
         Insta.GetComponent<NetworkObject>().Spawn();
+        Insta.transform.position = new Vector3(-9.12f, -0.42f, 0);
     }
 }

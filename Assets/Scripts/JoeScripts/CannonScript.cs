@@ -40,7 +40,7 @@ public class CannonScript : NetworkBehaviour
             cannonSmoke.Play();
             cannonSound.Play();
 
-            StartCoroutine(shakeBehaviour.Shake(duration, magnitude));
+            //StartCoroutine(shakeBehaviour.Shake(duration, magnitude));
 
             canFire = false;
         }

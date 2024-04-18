@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ShakeBehaviour : MonoBehaviour
+using Unity.Netcode;
+public class ShakeBehaviour : NetworkBehaviour
 {
     public IEnumerator Shake(float duration, float magnitude)
     {

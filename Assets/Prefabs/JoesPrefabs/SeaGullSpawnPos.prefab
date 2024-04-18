@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8195299665594458869}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -9.01, y: 2.7, z: 0.032761957}
+  m_LocalPosition: {x: -9.12, y: -0.42, z: 0.032761957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52,8 +52,8 @@ MonoBehaviour:
   spawnDelay: 2
   FlyingRight: 0
   ParrotSpawnChance: 0
-  maxRand: 0
-  boundingArea: 0
+  maxRand: 4
+  boundingArea: 1
 --- !u!114 &-2693153249605095242
 MonoBehaviour:
   m_ObjectHideFlags: 0

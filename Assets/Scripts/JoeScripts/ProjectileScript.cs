@@ -11,7 +11,7 @@ public class ProjectileScript : NetworkBehaviour
         Destroy(gameObject);
 
     }
-    private void Awake()
+    public override void OnNetworkSpawn()
     {
         StartCoroutine(RemoveProjectile(destroyDelay));
     }

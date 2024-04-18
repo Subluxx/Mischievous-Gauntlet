@@ -8,6 +8,7 @@ public class durationMgr : MonoBehaviour
 {
     //float member for the duration of the game
     [SerializeField] private float miniGameDuration;
+    public MainManager2 mainmanager2;
     float currentDuration;
 
     //public GameObject manager;
@@ -41,8 +42,8 @@ public class durationMgr : MonoBehaviour
         //check if the current duration has reached the miniGameDuration
         if (currentDuration > miniGameDuration)
         {
-            miniGameManager2.setHasEnded();
-            
+            mainmanager2.loadGame();
+
         }
         yield return null;
     }
