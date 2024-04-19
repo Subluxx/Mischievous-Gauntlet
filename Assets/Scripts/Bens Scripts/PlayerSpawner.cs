@@ -19,7 +19,7 @@ public class PlayerSpawner : NetworkBehaviour
     public void SpawnPlayerServerRpc(ulong clientId, int prefabId)
     {
         //mainManager2 = mainManagerObj.GetComponent<MainManager2>();
-        if(newManager._scene == null)
+        if (newManager._scene == null)
         {
             _scene = "playerLobby";
         }
@@ -42,17 +42,29 @@ public class PlayerSpawner : NetworkBehaviour
             newPlayer = (GameObject)Instantiate(playerPrefabJoe);
         }
         //newPlayer = (GameObject)Instantiate(playerPrefabB);
+        //newPlayer.GetComponent<Player>().color = Color.red;
         netObj = newPlayer.GetComponent<NetworkObject>();
         newPlayer.SetActive(true);
         netObj.SpawnAsPlayerObject(clientId, true);
+        SpawnPlayerClientRpc(NetworkManager.Singleton.LocalClientId);
     }
     public override void OnNetworkSpawn()
     {
-        SpawnPlayerServerRpc(0, 0);
+            
+            //Debug.Log(NetworkManager.Singleton.LocalClientId);
+            SpawnPlayerServerRpc(NetworkManager.Singleton.LocalClientId, 0);
     }
     public void sceneChange()
     {
-        SpawnPlayerServerRpc(0, 0);
+        SpawnPlayerServerRpc(NetworkManager.Singleton.LocalClientId, 0);
+        //SpawnPlayerServerRpc(0, 0);
         Debug.Log("as written");
+    }
+    [ClientRpc]
+    public void SpawnPlayerClientRpc(ulong playerId)
+    {
+        newPlayer.GetComponent<Player>().color = Color.red;
+        //newPlayer.SetActive(true);
+        netObj.SpawnAsPlayerObject(playerId, true);
     }
 }

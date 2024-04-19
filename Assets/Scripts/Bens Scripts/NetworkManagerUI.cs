@@ -20,12 +20,14 @@ public class NetworkManagerUI : MonoBehaviour
         //    }
         //});
         clientBtn.onClick.AddListener(() => {
+            //NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
             NetworkManager.Singleton.StartClient();
             foreach (Transform child in gameObject.transform) {
                 child.gameObject.SetActive(false);
             }
         });
         hostBtn.onClick.AddListener(() => {
+            //NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
             NetworkManager.Singleton.StartHost();
             foreach (Transform child in gameObject.transform) {
                 child.gameObject.SetActive(false);

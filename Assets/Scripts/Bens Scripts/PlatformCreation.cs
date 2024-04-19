@@ -20,10 +20,13 @@ public class PlatformCreation : NetworkBehaviour
     public Transform Insta3 { get; private set; }
     public override void OnNetworkSpawn()
     {
-        Insta = Instantiate(platformObjectPrefab);
-        Insta.GetComponent<NetworkObject>().Spawn();
-        Insta3 = Instantiate(endPlatform);
-        Insta3.GetComponent<NetworkObject>().Spawn();
+        if (IsHost)
+        {
+            Insta = Instantiate(platformObjectPrefab);
+            Insta.GetComponent<NetworkObject>().Spawn();
+            Insta3 = Instantiate(endPlatform);
+            Insta3.GetComponent<NetworkObject>().Spawn();
+        }
         //for (int i = 0; i < Platforms.Length; i++)
         //{
         //    Insta2 = Instantiate(Platforms[i]);
@@ -34,31 +37,37 @@ public class PlatformCreation : NetworkBehaviour
     }
     void Start()
     {
-        previousPosition = platformObjectPrefab.transform.position.x;
-        //Debug.Log(platformSelector);
-        platformWidths = new float[Platforms.Length];
-        for (int i = 0; i < Platforms.Length; i++)
+        if (IsHost)
         {
-            platformWidths[i] = Platforms[i].GetComponent<BoxCollider2D>().size.x;
+            previousPosition = platformObjectPrefab.transform.position.x;
+            //Debug.Log(platformSelector);
+            platformWidths = new float[Platforms.Length];
+            for (int i = 0; i < Platforms.Length; i++)
+            {
+                platformWidths[i] = Platforms[i].GetComponent<BoxCollider2D>().size.x;
+            }
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (previousPosition < endPoint)
+        if (IsHost)
         {
-            //Debug.Log("working");
-            distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
-            platformSelector = Random.Range(0, Platforms.Length);
-            Insta2 = Instantiate(Platforms[platformSelector]);
-            Insta2.GetComponent<NetworkObject>().Spawn();
-            Insta2.transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween+10, 0, 0);
-            //transform.position = new Vector3(transform.position.x+platformWidth+distanceBetween,)
-            previousPosition = Insta2.transform.position.x;
-        }
-        else
-        {
-            Insta3.transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween + 10, 0, 0);
+            if (previousPosition < endPoint)
+            {
+                //Debug.Log("working");
+                distanceBetween = Random.Range(distanceBetweenMin, distanceBetweenMax);
+                platformSelector = Random.Range(0, Platforms.Length);
+                Insta2 = Instantiate(Platforms[platformSelector]);
+                Insta2.GetComponent<NetworkObject>().Spawn();
+                Insta2.transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween + 10, 0, 0);
+                //transform.position = new Vector3(transform.position.x+platformWidth+distanceBetween,)
+                previousPosition = Insta2.transform.position.x;
+            }
+            else
+            {
+                Insta3.transform.position = new Vector3(previousPosition + platformWidths[platformSelector] + distanceBetween + 10, 0, 0);
+            }
         }
     }
 }

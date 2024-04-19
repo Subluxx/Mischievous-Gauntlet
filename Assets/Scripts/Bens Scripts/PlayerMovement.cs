@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+using System;
+
 public class PlayerMovement : NetworkBehaviour {
     //components
     Animator animator;
@@ -56,74 +58,92 @@ public class PlayerMovement : NetworkBehaviour {
         }
     }
     private void Start() {
-        IsFacingRight = true;
-        SetGravityScale(gravityScale);
+        if (IsLocalPlayer)
+        {
+            IsFacingRight = true;
+            SetGravityScale(gravityScale);
+        }
     }
     private void Update() {
-        LastOnGroundTime -= Time.deltaTime;
-        LastPressedJumpTime -= Time.deltaTime;
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        float xspeed = Mathf.Abs(RB.velocity.x);
-        animator.SetFloat("xspeed", xspeed);
-        float yspeed = RB.velocity.y;
-        animator.SetFloat("yspeed", yspeed);
-        //bool Jumping = IsJumping;
-        //animator.SetBool("Jumping", Jumping);
-        if (moveInput.x != 0)
-            CheckDirection(moveInput.x > 0);
-        if(Input.GetKeyDown(KeyCode.Space)) {
-			OnJumpInput();
-        }
-
-		if (Input.GetKeyUp(KeyCode.Space)) {
-			OnJumpUpInput();
-		}
-        //ground checks
-        if (!IsJumping) {
-            if (groundCheck()==true) {
-                LastOnGroundTime = coyoteTime;
+        if (IsLocalPlayer)
+        {
+            LastOnGroundTime -= Time.deltaTime;
+            LastPressedJumpTime -= Time.deltaTime;
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+            float xspeed = Mathf.Abs(RB.velocity.x);
+            animator.SetFloat("xspeed", xspeed);
+            float yspeed = RB.velocity.y;
+            animator.SetFloat("yspeed", yspeed);
+            //bool Jumping = IsJumping;
+            //animator.SetBool("Jumping", Jumping);
+            if (moveInput.x != 0)
+                CheckDirection(moveInput.x > 0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                OnJumpInput();
             }
-        }
-        //friction
-        if (LastOnGroundTime > 0 && Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow)) {
-            float amount = Mathf.Min(Mathf.Abs(RB.velocity.x), Mathf.Abs(frictionAmount));
-            amount *= Mathf.Sign(RB.velocity.x);
-            RB.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
-        }
-        //jump checks
-        if (IsJumping && RB.velocity.y < 0) {
-            IsJumping = false;
-        }
-        if (LastOnGroundTime > 0 && !IsJumping) {
-            JumpCut = false;
 
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                OnJumpUpInput();
+            }
+            //ground checks
             if (!IsJumping)
+            {
+                if (groundCheck() == true)
+                {
+                    LastOnGroundTime = coyoteTime;
+                }
+            }
+            //friction
+            if (LastOnGroundTime > 0 && Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                float amount = Mathf.Min(Mathf.Abs(RB.velocity.x), Mathf.Abs(frictionAmount));
+                amount *= Mathf.Sign(RB.velocity.x);
+                RB.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
+            }
+            //jump checks
+            if (IsJumping && RB.velocity.y < 0)
+            {
+                IsJumping = false;
+            }
+            if (LastOnGroundTime > 0 && !IsJumping)
+            {
+                JumpCut = false;
+
+                if (!IsJumping)
+                    JumpFalling = false;
+            }
+            if (CanJump() && LastPressedJumpTime > 0)
+            {
+                IsJumping = true;
+                JumpCut = false;
                 JumpFalling = false;
-        }
-        if (CanJump() && LastPressedJumpTime > 0) {
-            IsJumping = true;
-            JumpCut = false;
-            JumpFalling = false;
-            Jump();
-        }
-        //gravity checks for jumping
-        if (RB.velocity.y < 0) {
-            SetGravityScale(gravityScale * jumpCutGravityMult);
-            //Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
-            RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -maxFastFallSpeed));
-        }
-        else if (JumpCut) {
-            //Higher gravity if jump button released
-            SetGravityScale(gravityScale * fastFallGravityMult);
-            RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -maxFallSpeed));
-        }
-        else if ((IsJumping || JumpFalling) && Mathf.Abs(RB.velocity.y) < jumpHangTimeThreshold) {
-            SetGravityScale(gravityScale * jumpHangGravityMult);
-        }
-        else {
-            //Default gravity if standing on a platform or moving upwards
-            SetGravityScale(gravityScale);
+                Jump();
+            }
+            //gravity checks for jumping
+            if (RB.velocity.y < 0)
+            {
+                SetGravityScale(gravityScale * jumpCutGravityMult);
+                //Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
+                RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -maxFastFallSpeed));
+            }
+            else if (JumpCut)
+            {
+                //Higher gravity if jump button released
+                SetGravityScale(gravityScale * fastFallGravityMult);
+                RB.velocity = new Vector2(RB.velocity.x, Mathf.Max(RB.velocity.y, -maxFallSpeed));
+            }
+            else if ((IsJumping || JumpFalling) && Mathf.Abs(RB.velocity.y) < jumpHangTimeThreshold)
+            {
+                SetGravityScale(gravityScale * jumpHangGravityMult);
+            }
+            else
+            {
+                //Default gravity if standing on a platform or moving upwards
+                SetGravityScale(gravityScale);
+            }
         }
     }
     private void Run() {
