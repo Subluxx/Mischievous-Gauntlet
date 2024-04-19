@@ -1456,6 +1456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: durationManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9068674184016234706, guid: 636d09fc5cede440c809d727aa16cebe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -14,4 +14,12 @@ public class BirdSpawn : NetworkBehaviour
         Insta.GetComponent<NetworkObject>().Spawn();
         Insta.transform.position = new Vector3(-9.12f, -0.42f, 0);
     }
+    public override void OnNetworkDespawn()
+    {
+        if (IsHost)
+        {
+            Insta.GetComponent<NetworkObject>().Despawn();
+            base.OnNetworkDespawn();
+        }
+    }
 }

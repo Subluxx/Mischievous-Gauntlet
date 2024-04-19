@@ -41,6 +41,14 @@ public class PlayerSpawner : NetworkBehaviour
         {
             newPlayer = (GameObject)Instantiate(playerPrefabJoe);
         }
+        else if (string.Equals(_scene, "janScene"))
+        {
+            newPlayer = (GameObject)Instantiate(playerPrefabJan);
+        }
+        else if (string.Equals(_scene, "ollieScene"))
+        {
+            newPlayer = (GameObject)Instantiate(playerPrefabOllie);
+        }
         //newPlayer = (GameObject)Instantiate(playerPrefabB);
         //newPlayer.GetComponent<Player>().color = Color.red;
         netObj = newPlayer.GetComponent<NetworkObject>();

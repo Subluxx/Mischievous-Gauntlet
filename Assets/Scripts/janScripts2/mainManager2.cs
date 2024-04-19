@@ -35,14 +35,29 @@ public class MainManager2 : NetworkBehaviour
         if(newManager.index == -1)
         {
             NetworkManager.SceneManager.LoadScene("playerLobby", LoadSceneMode.Single);
+            newManager.index = 0;
         }
-        else
+        else if(newManager.index == 0)
         {
             currentScene = newManager.loadGame();
             //Debug.Log(currentScene);
             NetworkManager.SceneManager.LoadScene(currentScene, LoadSceneMode.Single);
+            newManager.index = 1;
         }
-        newManager.index += 1;
+        else if (newManager.index == 1)
+        {
+            currentScene = newManager.loadGame();
+            //Debug.Log(currentScene);
+            NetworkManager.SceneManager.LoadScene(currentScene, LoadSceneMode.Single);
+            newManager.index = 2;
+        }
+        else if (newManager.index == 2)
+        {
+            currentScene = newManager.loadGame();
+            //Debug.Log(currentScene);
+            NetworkManager.SceneManager.LoadScene(currentScene, LoadSceneMode.Single);
+            //newManager.index = 3;
+        }
         //Debug.Log(newManager.index);
     }
     public override void OnNetworkSpawn()

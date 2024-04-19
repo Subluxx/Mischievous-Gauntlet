@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public static class newManager
 {
-    public static string[] gameSceneNames = { "playerLobby", "benScene", "janScene" , "joeScene", "ollieScene"};
+    public static string[] gameSceneNames = { "playerLobby", "joeScene", "benScene" , "janScene", "ollieScene"};
     public static List<string> currentGameSceneOrder = new List<string>();
     public static string _scene;
 
@@ -38,8 +38,8 @@ public static class newManager
         {
             //var status = new NetworkManager.SceneManager.LoadScene(currentGameSceneOrder[index], LoadSceneMode.Single);
             //int placeHolder = index;
-            Debug.Log(index);
             _scene = currentGameSceneOrder[index];
+            Debug.Log(index);
             return _scene;
             //SceneManager.LoadScene(currentGameSceneOrder[index]);
         }

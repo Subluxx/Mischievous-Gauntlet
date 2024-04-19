@@ -69,4 +69,14 @@ public class SeaGullSpawnBehaviour : NetworkBehaviour
         transform.localPosition = new Vector3(spawnPosition.x, yMoving, spawnPosition.z);
         StartCoroutine(SpawnSeaGull(spawnDelay));
     }
+    public override void OnNetworkDespawn()
+    {
+        if (IsHost)
+        {
+            SeaGullInst.GetComponent<NetworkObject>().Despawn();
+            ParrotInst.GetComponent<NetworkObject>().Despawn();
+            base.OnNetworkDespawn();
+        }
+    }
+
 }

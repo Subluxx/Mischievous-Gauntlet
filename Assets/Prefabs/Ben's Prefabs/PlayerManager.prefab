@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1279484577088374479}
   - component: {fileID: 2715700421610771}
-  - component: {fileID: 5431446127629822948}
   - component: {fileID: 939123574401287544}
   m_Layer: 0
   m_Name: PlayerManager
@@ -32,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2715700421610771
 MonoBehaviour:
@@ -48,22 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefabLobby: {fileID: 4326281477872864298, guid: 3d3f40174b4cb4c9da1278b2316d8284, type: 3}
   playerPrefabBen: {fileID: 4326281477872864298, guid: d2e889c29436948e5a52b81036071e52, type: 3}
-  playerPrefabJan: {fileID: 0}
+  playerPrefabJan: {fileID: 7430991051998363774, guid: 7ef733e20b862a3439aae09ada5ff355, type: 3}
   playerPrefabJoe: {fileID: 4755909235722568485, guid: 35f83779d37204d73b492362ffbda588, type: 3}
-  playerPrefabOllie: {fileID: 0}
+  playerPrefabOllie: {fileID: 5532584644764169961, guid: 060778e2615071842a49bcf3b7856624, type: 3}
   _scene: 
---- !u!114 &5431446127629822948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332810861011521181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6793e93887af4d48a7cc00654ae0981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &939123574401287544
 MonoBehaviour:
   m_ObjectHideFlags: 0
