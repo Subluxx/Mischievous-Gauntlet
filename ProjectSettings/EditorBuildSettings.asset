@@ -5,14 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/joeScene.unity
     guid: 819475409bba21d49bd3846e61113590
-  - enabled: 1
-    path: Assets/Scenes/menuTest.unity
+  - enabled: 0
+    path: Assets/Scenes/janScene.unity
     guid: 356efb64830a6c946a07fe0eb498f1c1
   - enabled: 0
     path: Assets/Scenes/testScenes/testScene1.unity
@@ -20,19 +20,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/testScenes/testScene2.unity
     guid: f6285abc9fbe196429bc50e019e6cf75
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/benScene.unity
     guid: 7aaa965a088f841ac9395582da3144ac
-  - enabled: 1
-    path: Assets/Scenes/janScene.unity
+  - enabled: 0
+    path: Assets/Scenes/JanScene/janMinigame.unity
     guid: 7cf855507032249d09584aec0e140bc1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/endScene.unity
     guid: 03aa3d85c002aa443959d08a4cee9dbe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ollieScene.unity
     guid: 1ce800e0f10fd5445bbc18762d1b1d97
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/playerLobby.unity
     guid: cd203517fc0ea4445837aabe586d5944
   m_configObjects: {}

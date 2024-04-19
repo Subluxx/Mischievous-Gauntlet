@@ -66,19 +66,7 @@ public class PlayerController : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
 
-        if (inputHorizontal > 0)
-        {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-            isMoving = true;
-
-        }
-
-        if (inputHorizontal < 0)
-        {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-            isMoving = true;
-
-        }
+        
 
         if (isMoving == true)
         {
